@@ -20,5 +20,5 @@ jobs:
       - run: 'npm install'
       - run: 'npm run build'
       - name: 'Deploy to Cloud Run'
-        run: 'gcloud run deploy paper-search --source . --region asia-northeast1 --allow-unauthenticated'
+        run: 'gcloud run deploy api-hideo54-com --source . --region asia-northeast1 --allow-unauthenticated'
         # We don't use google-github-actions/deploy-cloudrun@v1 because it does not allow unauthenticated access
