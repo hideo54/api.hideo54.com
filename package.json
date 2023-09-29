@@ -1,0 +1,20 @@
+{
+  "name": "api.hideo54.com",
+  "version": "1.0.0",
+  "description": "hideo54 API.",
+  "main": "src/app.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hideo54",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.7.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fastify": "^4.23.2"
+  }
+}

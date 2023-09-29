@@ -1,13 +1,13 @@
 # api.hideo54.com
 
-## Where does a program run?
+## Publicly Available APIs
 
-APIs relating to hideout run on Kaguya in hideout Network. Otherwise they run on Firebase Cloud Functions. API paths are not determined by these environmental differneces.
+Running on a single container on Cloud Run, which is maintained publicly in this repository.
 
-## Publicly Available
-
-TBA.
+Each endpoint is basically `https://api.hideo54.com/:appname/:something`.
 
 ## Private Use
 
-TBA.
+Each app is running on Cloud Functions and is maintained in private repository. The main app, which is managed in this repository, plays a role of proxy.
+
+Each endpoint is basically `https://api.hideo54.com/private/:appname/:something`.
