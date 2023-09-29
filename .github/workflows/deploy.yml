@@ -1,0 +1,24 @@
+name: Deploy to Cloud Run
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/**'
+  workflow_dispatch:
+concurrency:
+  group: cloud-run-deployment
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: 'actions/checkout@v3'
+      - uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_HIDEO54 }}'
+      - run: 'npm install'
+      - run: 'npm run build'
+      - name: 'Deploy to Cloud Run'
+        run: 'gcloud run deploy paper-search --source . --region asia-northeast1 --allow-unauthenticated'
+        # We don't use google-github-actions/deploy-cloudrun@v1 because it does not allow unauthenticated access
