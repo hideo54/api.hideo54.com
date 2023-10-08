@@ -10,5 +10,6 @@ app.get('/', async (request, reply) => {
 });
 
 app.listen({
+    host: '::',
     port: Number(process.env.PORT) || 8080,
 });
