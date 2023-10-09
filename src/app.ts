@@ -9,6 +9,8 @@ app.get('/', async (request, reply) => {
     });
 });
 
+app.register(import('./jp-local-gov'));
+
 app.listen({
     host: '::',
     port: Number(process.env.PORT) || 8080,
